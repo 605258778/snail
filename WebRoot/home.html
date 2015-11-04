@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>辽宁千万亩经济林工程信息系统</title>
+<link rel="stylesheet" href="../style/login.css">
+</head>
+<body>
+<div class="fore-sys-login-main">
+
+    <div class="fore-sys-login-logo"></div>
+    <form id="form" action="../login/login.do" method="post">
+    <div class="fore-sys-login-tips" id="dateTip">请输入用户名与密码</div>
+    <div class="fore-sys-login-form">
+        <div class="form-box">
+            <div class="cell">
+                <div class="bg">
+                <label class="user">用户名：</label>
+                <input type="text" class="input" maxlength="20" value="" name="username" id="username" value='superadmin'>
+                </div>
+            </div>
+            <div class="cell">
+                <div class="bg">
+                <label class="pwd">密码：</label>
+                <input type="password" class="input" maxlength="18" value="" name="password" id="password" onkeydown="keypress()" value='superadmin'/>
+                </div>
+            </div>
+            <div class="btns">
+                <input type="button" class="btn" onclick="submitUser()" value="登录" title="点击登录">
+            </div>
+        </div>
+         </form>
+    </div>
+</div>
+</body>
+ <script type="text/javascript">
+ var date=new Date();
+ var year=date.getFullYear();
+ var month=date.getMonth()+1;
+ var day=date.getDate();
+ document.getElementById("dateTip").innerHTML="今天是"+year+"年"+month+"月"+day+"日。请输入用户名与密码。";		
+	function submitUser() {
+	debugger;
+		var username = document.getElementById("username").value;
+		var password = document.getElementById("password").value;
+		if (username == "" || username == "请输入用户名") {
+			alert("请输入用户名");
+			return;
+		}
+		if (password == "" || password == "请输入密码") {
+			alert("请输入密码");
+			return;
+		}
+		document.getElementById("form").submit();
+	}
+
+	function keypress() {
+		if (window.event.keyCode == 13) {
+			submitUser();
+		}
+	}
+	
+	function fullScreen() {
+		window.moveTo(0, 0);
+		window.resizeTo(screen.availWidth, screen.availHeight);
+		window.outerWidth = screen.availWidth;
+		window.outerHeight = screen.availHeight;
+	}		
+</script>
+</html>

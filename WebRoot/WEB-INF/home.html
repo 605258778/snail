@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>辽宁千万亩经济林工程信息系统</title>
+<link rel="stylesheet" href="../login.css">
+<link rel="stylesheet" href="../login.css" type="text/css"></link></head>
+<body>
+ddfd
+</body>
+ <script type="text/javascript">
+ 
+ var date=new Date();
+ var year=date.getFullYear();
+ var month=date.getMonth()+1;
+ var day=date.getDate();
+ document.getElementById("dateTip").innerHTML="今天是"+year+"年"+month+"月"+day+"日。请输入用户名与密码。";		
+	function submitUser() {
+		var username = document.getElementById("username").value;
+		var password = document.getElementById("password").value;
+		if (username == "" || username == "请输入用户名") {
+			alert("请输入用户名");
+			return;
+		}
+		if (password == "" || password == "请输入密码") {
+			alert("请输入密码");
+			return;
+		}
+		document.getElementById("form").submit();
+	}
+
+	function keypress() {
+		if (window.event.keyCode == 13) {
+			submitUser();
+		}
+	}
+</script>
+</html>
